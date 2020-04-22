@@ -1,0 +1,18 @@
+<resources>
+    <!-- 仪表盘自定义属性 -->
+    <declare-styleable name="DashboardView">
+        <attr name="color_dial_lower" format="color" />
+        <attr name="color_dial_middle" format="color" />
+        <attr name="color_dial_high" format="color" />
+        <attr name="text_size_dial" format="dimension" />
+        <attr name="stroke_width_dial" format="dimension" />
+        <attr name="radius_circle_dial" format="dimension" />
+        <attr name="text_title_dial" format="string" />
+        <attr name="text_title_size" format="dimension" />
+        <attr name="text_title_color" format="color" />
+        <attr name="text_size_value" format="dimension" />
+        <attr name="clock_unit_name" format="string" />
+        <attr name="animator_play_time" format="integer" />
+        <attr name="dashboardName" format="string" />
+    </declare-styleable>
+</resources>
