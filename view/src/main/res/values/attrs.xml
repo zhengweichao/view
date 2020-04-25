@@ -1,19 +1,24 @@
 <resources>
     <!-- 仪表盘自定义属性 -->
-    <declare-styleable name="DashboardView">
-        <attr name="color_dial_lower" format="color" />
-        <attr name="color_dial_middle" format="color" />
-        <attr name="color_dial_high" format="color" />
-        <attr name="text_size_dial" format="dimension" />
-        <attr name="stroke_width_dial" format="dimension" />
-        <attr name="radius_circle_dial" format="dimension" />
-        <attr name="text_title_dial" format="string" />
-        <attr name="text_title_size" format="dimension" />
-        <attr name="text_title_color" format="color" />
-        <attr name="text_size_value" format="dimension" />
-        <attr name="clock_unit_name" format="string" />
-        <attr name="animator_play_time" format="integer" />
-        <attr name="dashboardName" format="string" />
+    <declare-styleable name="ScienceBoardView">
+        <!--刻度 字体颜色-->
+        <attr name="sbDialColor" format="color" />
+        <!--刻度 字体大小-->
+        <attr name="sbDialTextSize" format="dimension" />
+        <!--边框圆弧宽度-->
+        <attr name="sbBorderWidth" format="dimension" />
+        <!--仪表盘半径-->
+        <attr name="sbRadius" format="dimension" />
+        <!--中心数值 字体大小-->
+        <attr name="sbValueTextSize" format="dimension" />
+        <!--中心单位 字体大小-->
+        <attr name="sbUnitTextSize" format="dimension" />
+        <!--中心数值 字体颜色-->
+        <attr name="sbValueTextColor" format="color" />
+        <!--单位 名称-->
+        <attr name="sbUnitName" format="string" />
+        <!--数值改变 动画时长-->
+        <attr name="sbAnimDuration" format="integer" />
     </declare-styleable>
 
     <!--  角标 -->
@@ -34,5 +39,18 @@
             <enum name="bottom_left_triangle" value="6" />
             <enum name="bottom_right_triangle" value="7" />
         </attr>
+    </declare-styleable>
+
+    <!--分贝仪仪表盘-->
+    <declare-styleable name="DecibelBoardView">
+        <attr name="colorRoundRadius" format="dimension" />
+        <attr name="currentLineRoundLength" format="dimension" />
+        <attr name="currentValueTextSize" format="dimension" />
+        <attr name="lineRoundLength" format="dimension" />
+        <attr name="lineRoundStart" format="dimension" />
+        <attr name="outsideRoundRadius" format="dimension" />
+        <attr name="startAngle" format="float" />
+        <attr name="lineRoundRadiusBgColor" format="color" />
+        <attr name="lineRoundRadiusColor" format="color" />
     </declare-styleable>
 </resources>
