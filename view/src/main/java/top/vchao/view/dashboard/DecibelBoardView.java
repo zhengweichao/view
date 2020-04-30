@@ -11,10 +11,12 @@ import android.graphics.SweepGradient;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.view.View;
 
 import top.vchao.view.R;
+
+import static top.vchao.view.util.DpUtils.dp2px;
+import static top.vchao.view.util.DpUtils.sp2px;
 
 /**
  * @ description: 分贝仪仪表盘
@@ -77,7 +79,7 @@ public class DecibelBoardView extends View {
             this.currentLineRoundLength = obtainStyledAttributes.getDimension(R.styleable.DecibelBoardView_currentLineRoundLength, 339.0f);
             this.lineRoundLength = obtainStyledAttributes.getDimension(R.styleable.DecibelBoardView_lineRoundLength, 342.0f);
             this.lineRoundStart = obtainStyledAttributes.getDimension(R.styleable.DecibelBoardView_lineRoundStart, 525.0f);
-            this.currentValueTextSize = obtainStyledAttributes.getDimension(R.styleable.DecibelBoardView_currentValueTextSize, toSp(60.0f));
+            this.currentValueTextSize = obtainStyledAttributes.getDimension(R.styleable.DecibelBoardView_currentValueTextSize, sp2px(60.0f));
             this.lineRoundRadiusColor = obtainStyledAttributes.getColor(R.styleable.DecibelBoardView_lineRoundRadiusColor, 0x33FFFFFF);
             this.lineRoundRadiusBgColor = obtainStyledAttributes.getColor(R.styleable.DecibelBoardView_lineRoundRadiusBgColor, 0xBFFFFFF);
             this.startAngle = obtainStyledAttributes.getFloat(R.styleable.DecibelBoardView_startAngle, 125.0f);
@@ -107,7 +109,7 @@ public class DecibelBoardView extends View {
         this.outsideRoundRadiusPaint.setAntiAlias(true);
         this.outsideRoundRadiusPaint.setStyle(Paint.Style.STROKE);
         this.outsideRoundRadiusPaint.setColor(this.lineRoundRadiusBgColor);
-        this.outsideRoundRadiusPaint.setStrokeWidth(toDip(3.0f));
+        this.outsideRoundRadiusPaint.setStrokeWidth(dp2px(3.0f));
         this.currentLineRoundPaint = new Paint();
         this.currentLineRoundPaint.setAntiAlias(true);
         this.currentLineRoundPaint.setStyle(Paint.Style.STROKE);
@@ -116,12 +118,12 @@ public class DecibelBoardView extends View {
         this.dbTextPaint.setAntiAlias(true);
         this.dbTextPaint.setStyle(Paint.Style.STROKE);
         this.dbTextPaint.setColor(-1);
-        this.dbTextPaint.setTextSize(toSp(20.0f));
+        this.dbTextPaint.setTextSize(sp2px(20.0f));
         this.dbTextPaint.setTypeface(Typeface.create("sans-serif-medium", Typeface.NORMAL));
         this.colorRoundPaint = new Paint();
         this.colorRoundPaint.setAntiAlias(true);
         this.colorRoundPaint.setStyle(Paint.Style.STROKE);
-        this.colorRoundPaint.setStrokeWidth(toDip(4.0f));
+        this.colorRoundPaint.setStrokeWidth(dp2px(4.0f));
     }
 
     protected void onSizeChanged(int i, int i2, int i3, int i4) {
@@ -130,7 +132,7 @@ public class DecibelBoardView extends View {
         this.width = getWidth();
         this.halfWidth = this.width / 2;
         this.height = getHeight();
-        this.centerY = (int) (toDip(180.0f) + this.colorRoundRadius);
+        this.centerY = (int) (dp2px(180.0f) + this.colorRoundRadius);
         initColorRoundRect();
         initColorRoundSweepGradient();
     }
@@ -198,26 +200,26 @@ public class DecibelBoardView extends View {
         canvas.save();
         this.colorRoundPaint.setColor(0xFF009AD6);
         canvas.rotate((float) (((double) ((-this.startAngle) + 1.0f)) + 0.2d), (float) this.halfWidth, (float) this.centerY);
-        canvas.drawLine((float) this.halfWidth, toDip(8.0f) + (((float) this.centerY) - toDip(95.0f)), (float) this.halfWidth, ((float) this.centerY) - toDip(95.0f), this.colorRoundPaint);
+        canvas.drawLine((float) this.halfWidth, dp2px(8.0f) + (((float) this.centerY) - dp2px(95.0f)), (float) this.halfWidth, ((float) this.centerY) - dp2px(95.0f), this.colorRoundPaint);
         canvas.restore();
         canvas.save();
 
         // 绘制半圆环的右边角
         this.colorRoundPaint.setColor(0xFFCF4036);
         canvas.rotate((float) (((double) (((-this.startAngle) + 1.0f) + 288.0f)) - 0.2d), (float) this.halfWidth, (float) this.centerY);
-        canvas.drawLine((float) this.halfWidth, toDip(8.0f) + (((float) this.centerY) - toDip(95.0f)), (float) this.halfWidth, ((float) this.centerY) - toDip(95.0f), this.colorRoundPaint);
+        canvas.drawLine((float) this.halfWidth, dp2px(8.0f) + (((float) this.centerY) - dp2px(95.0f)), (float) this.halfWidth, ((float) this.centerY) - dp2px(95.0f), this.colorRoundPaint);
         canvas.restore();
         canvas.save();
 
         // 绘制标记最大分贝的小三角
         canvas.rotate((-this.startAngle) + ((((float) maxDb) / DB_VALUE_PER_SCALE) * DEGRESS_VALUE_PER_SCALE), (float) this.halfWidth, (float) this.centerY);
-        canvas.drawBitmap(this.triangleBitmap, (float) this.halfWidth, (((float) this.centerY) - this.outsideRoundRadius) - toDip(10.0f), this.currentValuePaint);
+        canvas.drawBitmap(this.triangleBitmap, (float) this.halfWidth, (((float) this.centerY) - this.outsideRoundRadius) - dp2px(10.0f), this.currentValuePaint);
         canvas.restore();
         canvas.save();
 
         // 绘制标记最小分贝的小三角
         canvas.rotate((-this.startAngle) + ((((float) minDb) / DB_VALUE_PER_SCALE) * DEGRESS_VALUE_PER_SCALE), (float) this.halfWidth, (float) this.centerY);
-        canvas.drawBitmap(this.triangleBitmap, (float) this.halfWidth, (((float) this.centerY) - this.outsideRoundRadius) - toDip(10.0f), this.currentValuePaint);
+        canvas.drawBitmap(this.triangleBitmap, (float) this.halfWidth, (((float) this.centerY) - this.outsideRoundRadius) - dp2px(10.0f), this.currentValuePaint);
         canvas.restore();
 
         // 绘制描述分贝的文字
@@ -248,11 +250,4 @@ public class DecibelBoardView extends View {
         invalidate();
     }
 
-    private float toDip(float value) {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, getResources().getDisplayMetrics());
-    }
-
-    private float toSp(float value) {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, value, getResources().getDisplayMetrics());
-    }
 }

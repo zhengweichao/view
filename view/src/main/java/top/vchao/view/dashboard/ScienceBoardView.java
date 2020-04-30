@@ -12,7 +12,6 @@ import android.graphics.RectF;
 import android.graphics.SweepGradient;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
@@ -21,6 +20,8 @@ import androidx.annotation.Nullable;
 import java.text.DecimalFormat;
 
 import top.vchao.view.R;
+
+import static top.vchao.view.util.DpUtils.dp2px;
 
 /**
  * @ Create_time : 2020/1/2 on 12:48.
@@ -395,14 +396,6 @@ public class ScienceBoardView extends View {
         animator.setInterpolator(interpolator);
         animator.setDuration(mAnimDuration);
         animator.start();
-    }
-
-    protected int dp2px(int dpVal) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpVal, getResources().getDisplayMetrics());
-    }
-
-    protected int sp2px(int spVal) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, spVal, getResources().getDisplayMetrics());
     }
 
     protected String formatData(float num) {

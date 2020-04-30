@@ -17,9 +17,9 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * @ Create_time: 2020/4/24 on 11:57.
- * @ description: 自定义 角标 View
- * @ author: vchao  blog: http://blog.csdn.net/zheng_weichao
+ * @description 自定义 角标 View
+ * @author HaoZhang  @ github : https://github.com/HeZaiJin/SlantedTextView
+ * @update vchao  @ blog : https://vchao.blog.csdn.net
  */
 public class CornerMarkView extends View {
 

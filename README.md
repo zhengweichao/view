@@ -43,3 +43,9 @@ dependencies {
 - https://github.com/dalong982242260/AndroidDashboardView
 - https://github.com/baoyachi/StepView
 - https://blog.csdn.net/xiao_nian/article/details/83141422
+- https://github.com/HeZaiJin/SlantedTextView
+
+本库只收藏轻量级的小型自定义View，以我自己的原创，或者网上的闲散资源整理得到的内容 为主。
+除此之外，还有很多优秀的较为复杂的自定义View库，无法一一收录。在这里一并推荐给大家：
+
+- https://github.com/scwang90/SmartRefreshLayout

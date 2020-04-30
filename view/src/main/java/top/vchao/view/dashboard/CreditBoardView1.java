@@ -27,6 +27,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import static top.vchao.view.util.DpUtils.dp2px;
+import static top.vchao.view.util.DpUtils.sp2px;
+
 /**
  * @ description : 仿芝麻信用分仪表盘
  * @ author : woxingxiao  @ github : https://github.com/woxingxiao/DashboardView
@@ -318,16 +321,6 @@ public class CreditBoardView1 extends View {
         mPaint.setAlpha(160);
         mPaint.setTextSize(sp2px(10));
         canvas.drawText(getFormatTimeStr(), mCenterX, mCenterY + dp2px(70), mPaint);
-    }
-
-    private int dp2px(int dp) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
-                Resources.getSystem().getDisplayMetrics());
-    }
-
-    private int sp2px(int sp) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp,
-                Resources.getSystem().getDisplayMetrics());
     }
 
     private SweepGradient generateSweepGradient() {

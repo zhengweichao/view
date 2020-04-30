@@ -1,7 +1,6 @@
 package top.vchao.view.dashboard;
 
 import android.content.Context;
-import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Matrix;
@@ -11,8 +10,10 @@ import android.graphics.RectF;
 import android.graphics.SweepGradient;
 import android.text.TextUtils;
 import android.util.AttributeSet;
-import android.util.TypedValue;
 import android.view.View;
+
+import static top.vchao.view.util.DpUtils.dp2px;
+import static top.vchao.view.util.DpUtils.sp2px;
 
 /**
  * @ description : 仿汽车速度仪表盘
@@ -306,16 +307,6 @@ public class CarBoardView extends View {
         // 7
         mPaint.setAlpha(num == -1 || num == 1 || num == 4 || num == 7 ? 25 : 255);
         canvas.drawLine(x - lx, y + gap * 4 + ly * 2, x + lx, y + gap * 4 + ly * 2, mPaint);
-    }
-
-    private int dp2px(int dp) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp,
-                Resources.getSystem().getDisplayMetrics());
-    }
-
-    private int sp2px(int sp) {
-        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp,
-                Resources.getSystem().getDisplayMetrics());
     }
 
     public float[] getCoordinatePoint(int radius, float angle) {
