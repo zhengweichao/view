@@ -31,7 +31,7 @@ dependencies {
 目前包括原创自定义View如下:
 
 - ScienceBoardView : 科技感仪表盘
-
+- DrawableTextView ：可自由控制 drawable 大小的 TextView
 
 除原创的自定义View之外,其它均参考或者来自其他大佬的博文或Github，在此向各位大佬表示敬意与感谢。
 参考内容如下:
